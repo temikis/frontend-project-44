@@ -1,13 +1,13 @@
 import getRandomIntInclusive from '../utils.js';
 import runGame from '../index.js';
 
-export default () => {
-  const MIN_NUMBER = 1;
-  const MAX_NUMBER = 100;
-  const OPERATORS = ['+', '-', '*'];
-  const GAME_TASK_DESCRIPTION = 'What is the result of the expression?';
+const MIN_NUMBER = 1;
+const MAX_NUMBER = 100;
+const OPERATORS = ['+', '-', '*'];
+const DESCRIPTION = 'What is the result of the expression?';
 
-  const putRoundDataArray = () => {
+export default () => {
+  const getRound = () => {
     let correctAnswer = '';
     const number1 = getRandomIntInclusive(MIN_NUMBER, MAX_NUMBER);
     const number2 = getRandomIntInclusive(MIN_NUMBER, MAX_NUMBER);
@@ -25,5 +25,5 @@ export default () => {
     return [correctAnswer, taskText];
   };
 
-  runGame(GAME_TASK_DESCRIPTION, putRoundDataArray);
+  runGame(DESCRIPTION, getRound);
 };

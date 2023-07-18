@@ -1,12 +1,12 @@
 import getRandomIntInclusive from '../utils.js';
 import runGame from '../index.js';
 
-export default () => {
-  const MIN_NUMBER = 1;
-  const MAX_NUMBER = 100;
-  const GAME_TASK_DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "no".';
+const MIN_NUMBER = 1;
+const MAX_NUMBER = 100;
+const DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-  const putRoundDataArray = () => {
+export default () => {
+  const getRound = () => {
     let correctAnswer = '';
     const number = getRandomIntInclusive(MIN_NUMBER, MAX_NUMBER);
     const taskText = `${number}`;
@@ -19,5 +19,5 @@ export default () => {
     return [correctAnswer, taskText];
   };
 
-  runGame(GAME_TASK_DESCRIPTION, putRoundDataArray);
+  runGame(DESCRIPTION, getRound);
 };

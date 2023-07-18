@@ -1,12 +1,12 @@
 import getRandomIntInclusive from '../utils.js';
 import runGame from '../index.js';
 
-export default () => {
-  const MIN_NUMBER = 1;
-  const MAX_NUMBER = 100;
-  const GAME_TASK_DESCRIPTION = 'Find the greatest common divisor of given numbers.';
+const MIN_NUMBER = 1;
+const MAX_NUMBER = 100;
+const DESCRIPTION = 'Find the greatest common divisor of given numbers.';
 
-  const putRoundDataArray = () => {
+export default () => {
+  const getRound = () => {
     let correctAnswer = 1;
     const number1 = getRandomIntInclusive(MIN_NUMBER, MAX_NUMBER);
     const number2 = getRandomIntInclusive(MIN_NUMBER, MAX_NUMBER);
@@ -23,5 +23,5 @@ export default () => {
     return [correctAnswer, taskText];
   };
 
-  runGame(GAME_TASK_DESCRIPTION, putRoundDataArray);
+  runGame(DESCRIPTION, getRound);
 };
