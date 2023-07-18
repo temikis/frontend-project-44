@@ -2,15 +2,15 @@ import readlineSync from 'readline-sync';
 
 const ROUNDS_COUNT = 3;
 
-export default (gameTaskDescription, putRoundDataArray) => {
+export default (description, getRound) => {
   let countCorrectAnswer = 0;
 
   console.log('Welcome to the Brain Games!');
   const namePlayer = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${namePlayer}!`);
-  console.log(gameTaskDescription);
+  console.log(description);
   while (countCorrectAnswer < ROUNDS_COUNT) {
-    const [correctAnswer, taskText] = putRoundDataArray();
+    const [correctAnswer, taskText] = getRound();
     console.log(`Question: ${taskText}`);
     const answerPlayer = readlineSync.question('Your answer: ');
     if (correctAnswer === answerPlayer) {
