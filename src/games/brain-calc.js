@@ -1,4 +1,4 @@
-import getRandomIntInclusive from '../getRandomIntInclusive.js';
+import getRandomIntInclusive from '../utils.js';
 import runGame from '../index.js';
 
 export default () => {
