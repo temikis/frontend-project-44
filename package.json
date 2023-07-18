@@ -1,7 +1,7 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
-  "description": "[![Actions Status](https://github.com/temikis/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/temikis/frontend-project-44/actions)",
+  "description": "Five easy-level math console mini-games",
   "main": "index.js",
   "type": "module",
   "scripts": {

@@ -7,6 +7,10 @@
 Five easy-level math console mini-games
 
 ---
+### Requirements:
+Node.js: 13.2.0 and above
+
+---
 ### Installation: 
 Download the program and run the following commands in its root directory:
 ```
