@@ -1,4 +1,4 @@
-import getRandomIntInclusive from '../utils.js';
+import getRandomNumber from '../utils.js';
 import runGame from '../index.js';
 
 const MIN_FIRST_NUMBER = 1;
@@ -10,9 +10,9 @@ const VALUES = 10;
 
 export default () => {
   const getRound = () => {
-    const firstNumber = getRandomIntInclusive(MIN_FIRST_NUMBER, MAX_FIRST_NUMBER);
-    const step = getRandomIntInclusive(MIN_STEP, MAX_STEP);
-    const randomIndex = getRandomIntInclusive(0, VALUES - 1);
+    const firstNumber = getRandomNumber(MIN_FIRST_NUMBER, MAX_FIRST_NUMBER);
+    const step = getRandomNumber(MIN_STEP, MAX_STEP);
+    const randomIndex = getRandomNumber(0, VALUES - 1);
     const numbers = [];
 
     for (let i = 0; i < VALUES; i += 1) {
