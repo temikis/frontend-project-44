@@ -6,24 +6,29 @@ const MAX_NUMBER = 100;
 const OPERATORS = ['+', '-', '*'];
 const DESCRIPTION = 'What is the result of the expression?';
 
+const calc = (number1, number2, operator) => {
+  switch (operator) {
+    case '+':
+      return number1 + number2;
+    case '-':
+      return number1 - number2;
+    case '*':
+      return number1 * number2;
+    default:
+      throw new Error(`Unknown operator state: '${operator}'!`);
+  }
+};
+
+const getRound = () => {
+  const number1 = getRandomNumber(MIN_NUMBER, MAX_NUMBER);
+  const number2 = getRandomNumber(MIN_NUMBER, MAX_NUMBER);
+  const operator = OPERATORS[getRandomNumber(0, OPERATORS.length - 1)];
+  const taskText = `${number1} ${operator} ${number2}`;
+  const correctAnswer = String(calc(number1, number2, operator));
+
+  return [correctAnswer, taskText];
+};
+
 export default () => {
-  const getRound = () => {
-    let correctAnswer = '';
-    const number1 = getRandomNumber(MIN_NUMBER, MAX_NUMBER);
-    const number2 = getRandomNumber(MIN_NUMBER, MAX_NUMBER);
-    const indexOfOperator = getRandomNumber(0, 2);
-    const taskText = `${number1} ${OPERATORS[indexOfOperator]} ${number2}`;
-
-    if (indexOfOperator === 0) {
-      correctAnswer = `${number1 + number2}`;
-    } else if (indexOfOperator === 1) {
-      correctAnswer = `${number1 - number2}`;
-    } else if (indexOfOperator === 2) {
-      correctAnswer = `${number1 * number2}`;
-    }
-
-    return [correctAnswer, taskText];
-  };
-
   runGame(DESCRIPTION, getRound);
 };
