@@ -6,25 +6,25 @@ const MAX_FIRST_NUMBER = 25;
 const DESCRIPTION = 'What number is missing in the progression?';
 const MIN_STEP = 1;
 const MAX_STEP = 10;
-const VALUES_COUNT = 10;
+const LENGTH = 10;
 
-const getNumbersForTask = (firstNumber, step, valuesCount) => {
-  const numbers = [];
-  for (let i = 0; i < valuesCount; i += 1) {
-    numbers.push(firstNumber + step * i);
+const getProgression = (start, step, length) => {
+  const progression = [];
+  for (let i = 0; i < length; i += 1) {
+    progression.push(start + step * i);
   }
 
-  return numbers;
+  return progression;
 };
 
 const getRound = () => {
   const firstNumber = getRandomNumber(MIN_FIRST_NUMBER, MAX_FIRST_NUMBER);
   const step = getRandomNumber(MIN_STEP, MAX_STEP);
-  const randomIndex = getRandomNumber(0, VALUES_COUNT - 1);
-  const numbers = getNumbersForTask(firstNumber, step, VALUES_COUNT);
-  const correctAnswer = String(numbers[randomIndex]);
-  numbers[randomIndex] = '..';
-  const taskText = numbers.join(' ');
+  const hiddenNumberIndex = getRandomNumber(0, LENGTH - 1);
+  const progression = getProgression(firstNumber, step, LENGTH);
+  const correctAnswer = String(progression[hiddenNumberIndex]);
+  progression[hiddenNumberIndex] = '..';
+  const taskText = progression.join(' ');
 
   return [correctAnswer, taskText];
 };
